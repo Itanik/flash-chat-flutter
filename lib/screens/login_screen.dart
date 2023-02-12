@@ -86,6 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: MaterialButton(
                   onPressed: () {
                     //Implement login functionality.
+                    Navigator.pushNamed(context, '/chat');
                   },
                   minWidth: 200.0,
                   height: 42.0,
