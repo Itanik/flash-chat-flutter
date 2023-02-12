@@ -1,7 +1,9 @@
+import 'package:flash_chat_flutter/screens/chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class LoginScreen extends StatefulWidget {
+  static const String id = '/login';
   const LoginScreen({super.key});
 
   @override
@@ -87,7 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: MaterialButton(
                   onPressed: () {
                     //Implement login functionality.
-                    context.go('/chat');
+                    context.go(ChatScreen.id);
                   },
                   minWidth: 200.0,
                   height: 42.0,

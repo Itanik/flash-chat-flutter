@@ -1,7 +1,10 @@
+import 'package:flash_chat_flutter/screens/login_screen.dart';
+import 'package:flash_chat_flutter/screens/registration_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class WelcomeScreen extends StatefulWidget {
+  static const String id = '/';
   const WelcomeScreen({super.key});
 
   @override
@@ -46,7 +49,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 child: MaterialButton(
                   onPressed: () {
                     //Go to login screen.
-                    context.push('/login');
+                    context.push(LoginScreen.id);
                   },
                   minWidth: 200.0,
                   height: 42.0,
@@ -65,7 +68,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 child: MaterialButton(
                   onPressed: () {
                     //Go to registration screen.
-                    context.push('/register');
+                    context.push(RegistrationScreen.id);
                   },
                   minWidth: 200.0,
                   height: 42.0,

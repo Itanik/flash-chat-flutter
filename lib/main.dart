@@ -11,12 +11,12 @@ class FlashChat extends StatelessWidget {
   FlashChat({super.key});
 
   final _router = GoRouter(initialLocation: '/', routes: [
-    GoRoute(path: '/', builder: (context, state) => const WelcomeScreen()),
-    GoRoute(path: '/login', builder: (context, state) => const LoginScreen()),
+    GoRoute(path: WelcomeScreen.id, builder: (context, state) => const WelcomeScreen()),
+    GoRoute(path: LoginScreen.id, builder: (context, state) => const LoginScreen()),
     GoRoute(
-        path: '/register',
+        path: RegistrationScreen.id,
         builder: (context, state) => const RegistrationScreen()),
-    GoRoute(path: '/chat', builder: (context, state) => const ChatScreen()),
+    GoRoute(path: ChatScreen.id, builder: (context, state) => const ChatScreen()),
   ]);
 
   @override
