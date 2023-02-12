@@ -3,27 +3,31 @@ import 'package:flash_chat_flutter/screens/login_screen.dart';
 import 'package:flash_chat_flutter/screens/registration_screen.dart';
 import 'package:flash_chat_flutter/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-void main() => runApp(const FlashChat());
+void main() => runApp(FlashChat());
 
 class FlashChat extends StatelessWidget {
-  const FlashChat({super.key});
+  FlashChat({super.key});
+
+  final _router = GoRouter(initialLocation: '/', routes: [
+    GoRoute(path: '/', builder: (context, state) => const WelcomeScreen()),
+    GoRoute(path: '/login', builder: (context, state) => const LoginScreen()),
+    GoRoute(
+        path: '/register',
+        builder: (context, state) => const RegistrationScreen()),
+    GoRoute(path: '/chat', builder: (context, state) => const ChatScreen()),
+  ]);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: _router,
       theme: ThemeData.dark().copyWith(
         textTheme: const TextTheme(
           bodyMedium: TextStyle(color: Colors.black54),
         ),
       ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const WelcomeScreen(),
-        '/login': (context) => const LoginScreen(),
-        '/register': (context) => const RegistrationScreen(),
-        '/chat': (context) => const ChatScreen(),
-      },
     );
   }
 }

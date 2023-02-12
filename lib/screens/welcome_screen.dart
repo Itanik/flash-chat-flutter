@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -45,7 +46,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 child: MaterialButton(
                   onPressed: () {
                     //Go to login screen.
-                    Navigator.pushNamed(context, '/login');
+                    context.push('/login');
                   },
                   minWidth: 200.0,
                   height: 42.0,
@@ -64,7 +65,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 child: MaterialButton(
                   onPressed: () {
                     //Go to registration screen.
-                    Navigator.pushNamed(context, '/register');
+                    context.push('/register');
                   },
                   minWidth: 200.0,
                   height: 42.0,
